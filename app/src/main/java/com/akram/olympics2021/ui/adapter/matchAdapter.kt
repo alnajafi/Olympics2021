@@ -7,10 +7,11 @@ import com.akram.olympics2021.R
 import com.akram.olympics2021.data.domain.Match
 import com.akram.olympics2021.ui.viewHolders.MatchViewHolder
 
-class mathAdapter(val list: List<Match>) : RecyclerView.Adapter<MatchViewHolder>(){
+class matchAdapter(val list: List<Match>) : RecyclerView.Adapter<MatchViewHolder>(){
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MatchViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.recycle_item,parent,false)
-        return MatchViewHolder(itemView)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.recycle_item,parent,false)
+        return MatchViewHolder(view)
     }
 
     override fun getItemCount(): Int = list.size

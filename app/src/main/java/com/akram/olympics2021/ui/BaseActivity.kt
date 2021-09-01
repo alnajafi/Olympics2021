@@ -14,7 +14,7 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
         set(value) = TODO()
 
 
-    //onCreate function
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = bindingInflater(layoutInflater)
@@ -23,6 +23,8 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
         addCallBack()
 
     }
+
+
     abstract fun setup()
     abstract fun addCallBack()
 

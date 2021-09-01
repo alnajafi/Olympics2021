@@ -3,10 +3,10 @@ package com.akram.olympics2021.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
-
 import com.akram.olympics2021.data.DataManager
+import com.akram.olympics2021.data.domain.Match
 import com.akram.olympics2021.databinding.ActivityMainBinding
-import com.akram.olympics2021.ui.adapter.mathAdapter
+import com.akram.olympics2021.ui.adapter.matchAdapter
 import com.akram.olympics2021.util.CsvParser
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -21,7 +21,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>()  {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
+        setup()
     }
+
+
+
+
 
     private fun parseFile(){
         val inputStream = assets.open("tokyo_2021.csv")
@@ -36,16 +41,21 @@ class MainActivity : BaseActivity<ActivityMainBinding>()  {
 
     override fun setup() {
         parseFile()
+        val adapter = matchAdapter(DataManager.matchListData)
+        binding?.recycler?.adapter = adapter
+
     }
 
     override fun addCallBack() {
-        getData()
+//        bindMatch()
+
     }
 
-    private fun getData(){
-        val adapter = mathAdapter(DataManager.matchListData)
-        binding?.recycler?.adapter = adapter
+    private fun bindMatch(match: Match) {
+        binding?.apply {
+//            rank.text = match.rank.toShort()
+        }
+
+    }
     }
 
-
-}
