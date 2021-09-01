@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 
 import com.akram.olympics2021.data.DataManager
-import com.akram.olympics2021.data.domain.Match
 import com.akram.olympics2021.databinding.ActivityMainBinding
 import com.akram.olympics2021.ui.adapter.mathAdapter
 import com.akram.olympics2021.util.CsvParser
@@ -32,7 +31,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>()  {
             val currentMatch = parser.parse(it)
             DataManager.addMatch(currentMatch)
         }
-//        bindCountryMax(DataManager.getmatch())
     }
 
 
@@ -49,24 +47,5 @@ class MainActivity : BaseActivity<ActivityMainBinding>()  {
         binding?.recycler?.adapter = adapter
     }
 
-//    private fun bindMatch(match: Match){
-//        binding?.apply {
-//            rank!!.text = match.rank
-//            noc!!.text = match.noc
-//            gold!!.text = match.gold.toString()
-//            silver!!.text = match.silver.toString()
-//            bronze!!.text = match.bronze.toString()
-//            noc!!.text = match.noc.toString()
-//
-//        }
-//    }
-//    private fun bindCountryMin(match: Match){
-//        binding?.apply {
-//            rank!!.text = ("${match.rank}, ${match.rank}")
-//            noc!!.text = ("${match.noc} M")
-//            gold!!.text = match.gold.toString()
-//            silver!!.text = match.silver.toString()
-//            bronze!!.text = match.bronze.toString()
-//        }
-//    }
+
 }
